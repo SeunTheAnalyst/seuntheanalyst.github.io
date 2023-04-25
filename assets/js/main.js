@@ -338,7 +338,7 @@
     
     async function handleSubmit(event) {
       event.preventDefault();
-      var status = document.getElementById("my-form-status");
+      var status = document.getElementById("status");
       var data = new FormData(event.target);
       fetch(event.target.action, {
         method: form.method,
@@ -348,7 +348,7 @@
         }
       }).then(response => {
         if (response.ok) {
-          status.innerHTML = "Thanks for your submission!";
+          status.innerHTML = "Thanks for your submission!, I will get back to you shortly.";
           form.reset()
         } else {
           response.json().then(data => {
